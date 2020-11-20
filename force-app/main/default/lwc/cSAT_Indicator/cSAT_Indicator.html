@@ -1,0 +1,52 @@
+<template>
+    <div class="container">
+        <div class="slds-page-header">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-media" style="display:flex;align-items:center;">
+                        <div class="slds-media__figure">
+                            <span class="slds-icon_container slds-icon-standard-opportunity" title="opportunity">
+                                <lightning-icon icon-name="custom:custom1"></lightning-icon>
+
+                            </span>
+                        </div>
+                        <div class="slds-media__body">
+                            <div class="slds-page-header__name">
+                                <div class="slds-page-header__name-title">
+                                    <h1>
+                                        <span class="slds-page-header__title slds-truncate">Customer Surveys</span>
+                                    </h1>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <template if:false={error}>
+            <div style="display:flex;flex-direction:row;position:relative;">
+                <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
+                    <div class="gaugeChart"></div>
+                    <div style="font-size:15px;font-weight:bold;top:75px;position:absolute;">{csat}</div>
+                    <div style="font-size:15px;font-weight:bold;top:95px;position:absolute;">CSAT</div>
+                </div>
+                <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
+                    <div class="gaugeChart"></div>
+                    <div style="font-size:15px;font-weight:bold;top:75px;position:absolute;">{effort}</div>
+                    <div style="font-size:15px;font-weight:bold;top:95px;position:absolute;">Vlotte Ervaring</div>
+                </div>
+                <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
+                    <div class="gaugeChart"></div>
+                    <div style="font-size:15px;font-weight:bold;top:75px;position:absolute;">{nps}</div>
+                    <div style="font-size:15px;font-weight:bold;top:95px;position:absolute;">NPS</div>
+                </div>
+            </div>
+        </template>
+        <template if:true={error}>
+            <div style="display:flex;flex-direction:row;justify-content:center;align-items:center;height: 50%;font-weight: bold;color: #0f0875;">
+                Contact might not have filled the survey yet.
+            </div>
+        </template>
+    </div>
+</template>
